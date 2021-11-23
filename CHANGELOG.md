@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.0.5 (2021-11-23)
+
+
+### Bug Fixes
+
+* use yarn cache ([b2c9671](https://github.com/nifty-badges/contracts/commit/b2c96710f8fd1072634ad8aa07d08d7a7c754947))
+
 ### [0.0.3](https://github.com/nifty-badges/contracts/compare/v0.0.2...v0.0.3) (2021-11-22)
 
 
