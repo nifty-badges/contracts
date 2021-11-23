@@ -31,6 +31,8 @@ jobs:
       - run: yarn release
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+          RINKEBY_URL: ${{ secrets.RINKEBY_URL }}
+          RINKEBY_PRIVATE_KEY: ${{ secrets.RINKEBY_PRIVATE_KEY }}
       - uses: ad-m/github-push-action@master
         with:
           tags: true
