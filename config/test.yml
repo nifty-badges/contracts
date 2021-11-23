@@ -1,0 +1,3 @@
+networks:
+  hardhat:
+    chainId: 1337
