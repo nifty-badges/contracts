@@ -10,7 +10,7 @@
     "compile": "hardhat clean && hardhat compile",
     "deploy": "hardhat run ./src/deploy.ts",
     "build": "yarn compile && yarn deploy --network rinkeby",
-    "test": "yarn compile && env NODE_NO_WARNINGS=1 jest",
+    "test": "env NODE_ENV=test yarn compile && env NODE_NO_WARNINGS=1 jest",
     "lint": "eslint **/*.ts",
     "release": "yarn build && standard-version && npm_config_registry=https://registry.npmjs.org/ npm publish --access public"
   },
