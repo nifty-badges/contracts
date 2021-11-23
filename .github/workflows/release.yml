@@ -1,0 +1,35 @@
+name: release
+
+on:
+  push:
+    branches:
+      - "main"
+    tags:
+      - "!*"
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+          cache: npm
+          registry-url: "https://registry.npmjs.org"
+      - run: yarn --frozen-lockfile
+      - run: yarn test
+      - run: git config --global user.email "${{ github.event.pusher.email }}"
+      - run: git config --global user.name "${{ github.event.pusher.name }}"
+      - run: yarn deploy --network rinkeby
+        env:
+          RINKEBY_URL: ${{ secrets.RINKEBY_URL }}
+          RINKEBY_PRIVATE_KEY: ${{ secrets.RINKEBY_PRIVATE_KEY }}
+      - run: yarn release
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+      - uses: ad-m/github-push-action@master
+        with:
+          tags: true
+          branch: main
+          github_token: ${{ secrets.GITHUB_TOKEN }}

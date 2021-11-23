@@ -1,0 +1,62 @@
+{
+  "name": "@nifty-badges/contracts",
+  "version": "0.0.3",
+  "private": false,
+  "license": "MIT",
+  "main": "index.ts",
+  "repository": "https://github.com/nifty-badges/contracts",
+  "scripts": {
+    "start": "hardhat node",
+    "compile": "hardhat clean && hardhat compile",
+    "deploy": "hardhat run ./src/deploy.ts",
+    "build": "yarn compile && yarn deploy --network rinkeby",
+    "test": "yarn compile && env NODE_NO_WARNINGS=1 jest",
+    "lint": "eslint **/*.ts",
+    "release": "yarn build && standard-version && npm_config_registry=https://registry.npmjs.org/ npm publish --access public"
+  },
+  "files": [
+    "/typechain"
+  ],
+  "jest": {
+    "preset": "ts-jest"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^9.0.13",
+    "@types/jest": "^27.0.2",
+    "@types/pino": "^7.0.5",
+    "@types/pino-pretty": "^4.7.3",
+    "@types/prettier": "^2.4.1",
+    "@types/standard-version": "^7.0.1",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "eslint": "^8.0.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-typescript": "^2.5.0",
+    "eslint-plugin-import": "^2.25.1",
+    "eslint-plugin-jest": "^25.2.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "jest": "^27.2.5",
+    "prettier": "^2.4.1",
+    "standard-version": "^9.3.2",
+    "ts-jest": "^27.0.5",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.4.4"
+  },
+  "dependencies": {
+    "@barath/typed-config": "^0.1.31",
+    "@nomiclabs/hardhat-ethers": "^2.0.2",
+    "@nomiclabs/hardhat-waffle": "^2.0.1",
+    "@openzeppelin/contracts": "^4.3.3",
+    "@typechain/ethers-v5": "^8.0.4",
+    "@typechain/hardhat": "^3.0.0",
+    "class-transformer": "^0.4.0",
+    "class-validator": "^0.13.1",
+    "ethers": "^5.5.1",
+    "hardhat": "^2.6.8",
+    "pino": "^7.4.0",
+    "pino-pretty": "^7.2.0",
+    "reflect-metadata": "^0.1.13",
+    "typechain": "^6.0.4"
+  }
+}

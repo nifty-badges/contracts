@@ -1,0 +1,10 @@
+logger:
+  name: nifty-badges
+  level: info
+networks:
+  hardhat:
+    chainId: 1337
+  rinkeby:
+    url: ${env:RINKEBY_URL}
+    accounts:
+      - ${env:RINKEBY_PRIVATE_KEY}

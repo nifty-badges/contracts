@@ -1,0 +1,16 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "ts-node debug",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "yarn",
+      "args": [
+        "start"
+      ],
+      "outputCapture": "std",
+      "console": "internalConsole"
+    }
+  ]
+}
